@@ -16,20 +16,16 @@ body {
 	padding: 0;
 }
 #photos {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	position: relative;
 }
 #photo-demo {
 	text-align: center;
 	margin: 0 auto;
 }
-#photo-controls {
+#photo-control--left,
+#photo-control--right {
+	z-index: 1;
 	position: absolute;
-	width: 100%;
-}
-#photo-controls > div {
 	color: #ccc;
 	background-color: red;
 	-webkit-border-radius: 2px;
@@ -47,6 +43,10 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 	font-style: italic;
+	top: calc(50% - 22px);
+}
+#photo-control--right {
+	right: 0;
 }
 #photo-controls > div:hover {
 	opacity: 0.8;
