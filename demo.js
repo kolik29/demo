@@ -3,7 +3,7 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		var action, fn, hexaPhoto, i, j, len1, photoControls, ref, leftControl, rightControl;
 		hexaPhoto = new HexaFlip(document.getElementById('photo-demo'), {
-			photos: ['a', 'b', 'c', 'd', 'e', 'f']
+			photos: ['a', 'b', 'c']
 		}, {
 			horizontalFlip: true
 		});

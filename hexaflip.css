@@ -21,11 +21,11 @@
   cursor: grabbing;
 }
 .hexaflip-cube > div {
-  -webkit-transition: -webkit-transform 0.4s;
-  -moz-transition: -moz-transform 0.4s;
-  -o-transition: -o-transform 0.4s;
-  -ms-transition: -ms-transform 0.4s;
-  transition: transform 0.4s;
+  -webkit-transition: -webkit-transform 1.5s;
+  -moz-transition: -moz-transform 1.5s;
+  -o-transition: -o-transform 1.5s;
+  -ms-transition: -ms-transform 1.5s;
+  transition: transform 1.5s;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
@@ -42,7 +42,7 @@
 .hexaflip-cube .hexaflip-side {
   width: 100%;
   overflow: hidden;
-  height: 100.5%;
+  height: 100%;
   position: absolute;
   -webkit-user-select: none;
   -moz-user-select: none;

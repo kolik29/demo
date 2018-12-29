@@ -21,6 +21,8 @@ body {
 #photo-demo {
 	text-align: center;
 	margin: 0 auto;
+	height: 100vh;
+	overflow: hidden;
 }
 #photo-control--left,
 #photo-control--right {

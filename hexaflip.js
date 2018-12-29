@@ -32,7 +32,7 @@
   }
 
   defaults = {
-    size: 100,
+    size: document.getElementById('photo-demo').offsetHeight,
     margin: 10,
     fontSize: 132,
     perspective: 1000,
@@ -125,8 +125,10 @@
       this.cubes[setsKeys[0]].el.style.marginLeft = '0';
       this.cubes[setsKeys[setsKeys.length - 1]].el.style.marginRight = '0';
       this.el.classList.add(cssClass);
-      this.el.style.height = this.size + 'vh';
-      this.el.style.width = this.size + 'vw';
+      //this.el.style.height = this.size + 'px';
+      //this.el.style.width = this.size + 'px';
+      this.el.style.height = '100vh';
+      this.el.style.width = '100vw';
       this.el.style[css.perspective] = this.perspective + 'px';
       this.el.appendChild(cubeFragment);
       this.eProp = this.horizontalFlip ? 'pageX' : 'pageY';
@@ -164,9 +166,7 @@
       };
       cube.el.className = cssClass + "-cube " + cssClass + "-cube-" + set;
       cube.el.style.margin = "0 " + this.margin + "px";
-      //cube.el.style.width = cube.el.style.height = cube.holder.style.width = cube.holder.style.height = this.size + 'px';
-      cube.el.style.width = cube.holder.style.width = this.size + 'vw';
-      cube.el.style.height = cube.holder.style.height = this.size + 'vh';
+      cube.el.style.width = cube.el.style.height = cube.holder.style.width = cube.holder.style.height = this.size + 'px';
       cube.holder.style[css.transform] = this._getTransform(0);
       sideProto = document.createElement('div');
       sideProto.classList.add(cssClass + '-side');
@@ -190,7 +190,7 @@
               return 'rotateY(90deg)';
           }
         })();
-        cube[side].style[css.transform] = (rotation + " translate3d(0, 0, " + (this.size / 2) + "vw)") + (this.horizontalFlip ? 'rotateZ(90deg)' : '');
+        cube[side].style[css.transform] = (rotation + " translate3d(0, 0, " + (this.size / 2) + "px)") + (this.horizontalFlip ? 'rotateZ(90deg)' : '');
         cube[side].style.fontSize = this.fontSize;
         cube.holder.appendChild(cube[side]);
       }
@@ -222,7 +222,7 @@
     };
 
     HexaFlip.prototype._getTransform = function(deg) {
-      return (this.horizontalFlip ? 'rotateZ(-90deg)' : '') + (" translateZ(-" + (this.size / 2) + "vw) rotateX(" + deg + "deg)");
+      return (this.horizontalFlip ? 'rotateZ(-90deg)' : '') + (" translateZ(-" + (this.size / 2) + "px) rotateX(" + deg + "deg)");
     };
 
     HexaFlip.prototype._setContent = function(el, content) {
