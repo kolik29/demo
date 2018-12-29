@@ -15,22 +15,22 @@ body {
 	margin: 0;
 	padding: 0;
 }
-#photos {
+#slider {
 	position: relative;
 	overflow-x: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-#photo-demo {
+#slider-container {
 	text-align: center;
 	margin: 0 auto;
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
 }
-#photo-control--left,
-#photo-control--right {
+#slider-control--left,
+#slider-control--right {
 	z-index: 1;
 	position: absolute;
 	color: #ccc;
@@ -52,34 +52,9 @@ body {
 	font-style: italic;
 	top: calc(50% - 22px);
 }
-#photo-control--right {
+#slider-control--right {
 	right: 0;
 }
-#photo-controls > div:hover {
-	opacity: 0.8;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter: alpha(opacity=80);
-}
-#photo-controls > div > span {
-	position: relative;
-	left: -0.6rem;
-	top: 0.4rem;
-}
-#photo-controls > div:first-child {
-	float: left;
-}
-#photo-controls > div:last-child {
-	float: right;
-}
-#photo-controls > div:last-child > span {
-	left: -0.1rem;
-}
-#time-demo {
-	margin: 0 auto;
-	margin-bottom: 9rem;
-}
-
-
 
 .hexaflip-side:nth-child(1) {
 	background-color: red !important;

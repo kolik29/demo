@@ -2,13 +2,13 @@
 (function() {
 	document.addEventListener('DOMContentLoaded', function() {
 		var action, fn, hexaPhoto, i, j, len1, photoControls, ref, leftControl, rightControl;
-		hexaPhoto = new HexaFlip(document.getElementById('photo-demo'), {
+		hexaPhoto = new HexaFlip(document.getElementById('slider-container'), {
 			photos: ['a', 'b', 'c']
 		}, {
 			horizontalFlip: true
 		});
-		leftControl = document.getElementById('photo-control--left');
-		rightControl = document.getElementById('photo-control--right');
+		leftControl = document.getElementById('slider-control--left');
+		rightControl = document.getElementById('slider-control--right');
 
 		leftControl.addEventListener('click', (function() {
 			return hexaPhoto['flipBack']();
