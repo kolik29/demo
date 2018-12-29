@@ -18,6 +18,9 @@ body {
 #photos {
 	position: relative;
 	overflow-x: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 #photo-demo {
 	text-align: center;
@@ -94,10 +97,7 @@ body {
 	background-color: yellow !important;
 }
 
-.hexaflip-side:nth-child(5) {
-	background-color: pink !important;
-}
-
+.hexaflip-side:nth-child(5),
 .hexaflip-side:nth-child(6) {
-	background-color: black !important;
+	background-color: transparent !important;
 }

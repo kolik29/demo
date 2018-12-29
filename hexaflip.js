@@ -164,9 +164,8 @@
       };
       cube.el.className = cssClass + "-cube " + cssClass + "-cube-" + set;
       cube.el.style.margin = "0 " + this.margin + "px";
-      //cube.el.style.width = cube.el.style.height = cube.holder.style.width = cube.holder.style.height = this.size + 'px';
-      cube.el.style.height = cube.holder.style.height = this.size + 'px';
-      cube.el.style.width = cube.holder.style.width = document.getElementById('photo-demo').offsetWidth + 'px';
+      cube.el.style.height = cube.holder.style.height = '100vh';
+      cube.el.style.width = cube.holder.style.width = '100vw';
       cube.holder.style[css.transform] = this._getTransform(0);
       sideProto = document.createElement('div');
       sideProto.classList.add(cssClass + '-side');
@@ -190,7 +189,7 @@
               return 'rotateY(90deg)';
           }
         })();
-        cube[side].style[css.transform] = (rotation + " translate3d(0, 0, " + (this.size) + "px)") + (this.horizontalFlip ? 'rotateZ(90deg)' : '');
+        cube[side].style[css.transform] = (rotation + " translate3d(0, 0, 50vw)") + (this.horizontalFlip ? 'rotateZ(90deg)' : '');
         cube[side].style.fontSize = this.fontSize;
         cube.holder.appendChild(cube[side]);
       }
@@ -222,7 +221,7 @@
     };
 
     HexaFlip.prototype._getTransform = function(deg) {
-      return (this.horizontalFlip ? 'rotateZ(-90deg)' : '') + (" translateZ(-" + (document.getElementById('photo-demo').offsetHeight) + "px) rotateX(" + deg + "deg)");
+      return (this.horizontalFlip ? 'rotateZ(-90deg)' : '') + (" translateZ(-50vw) rotateX(" + deg + "deg)");
     };
 
     HexaFlip.prototype._setContent = function(el, content) {
