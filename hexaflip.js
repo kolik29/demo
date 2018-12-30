@@ -129,25 +129,6 @@
       this.el.style[css.perspective] = this.perspective + 'px';
       this.el.appendChild(cubeFragment);
       this.eProp = this.horizontalFlip ? 'pageX' : 'pageY';
-      if (this.domEvents) {
-        ref3 = this.domEvents;
-        fn1 = (function(_this) {
-          return function(fn) {
-            return _this.el.addEventListener(type, function(e) {
-              var target;
-              target = e.target;
-              if (target.classList.contains(cssClass + "-side")) {
-                return fn.call(_this, e, target, target.parentNode.parentNode);
-              }
-            }, false);
-          };
-        })(this);
-        for (type in ref3) {
-          fn = ref3[type];
-          fn1(fn);
-        }
-        this.domEvents = null;
-      }
     }
 
     HexaFlip.prototype._createCube = function(set) {
@@ -193,28 +174,6 @@
         cube.holder.appendChild(cube[side]);
       }
       cube.el.appendChild(cube.holder);
-      eventPairs = [['TouchStart', 'MouseDown'], ['TouchMove', 'MouseMove'], ['TouchEnd', 'MouseUp'], ['TouchLeave', 'MouseLeave']];
-      mouseLeaveSupport = 'onmouseleave' in window;
-      for (l = 0, len2 = eventPairs.length; l < len2; l++) {
-        eventPair = eventPairs[l];
-        fn1 = (function(_this) {
-          return function(fn, cube) {
-            if (!((eString === 'TouchLeave' || eString === 'MouseLeave') && !mouseLeaveSupport)) {
-              return cube.el.addEventListener(eString.toLowerCase(), (function(e) {
-                return _this[fn](e, cube);
-              }), true);
-            } else {
-              return cube.el.addEventListener('mouseout', (function(e) {
-                return _this._onMouseOut(e, cube);
-              }), true);
-            }
-          };
-        })(this);
-        for (m = 0, len3 = eventPair.length; m < len3; m++) {
-          eString = eventPair[m];
-          fn1('_on' + eventPair[0], cube);
-        }
-      }
       this._setSides(cube);
       return cube;
     };
